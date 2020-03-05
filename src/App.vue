@@ -1,5 +1,6 @@
 <template>
-  <v-app>
+  <v-app class="app-bg">
+    <CvHeader />
     <v-content>
       <router-view></router-view>
     </v-content>
@@ -7,10 +8,13 @@
 </template>
 
 <script>
+import CvHeader from '@/components/CvHeader';
 export default {
   name: 'App',
 
-  components: {},
+  components: {
+    CvHeader
+  },
 
   data: () => ({
     //
@@ -20,4 +24,8 @@ export default {
 
 <style lang="scss">
 @import url('./assets/scss/style.scss');
+
+.app-bg {
+  background: #e5e5e5 !important;
+}
 </style>
