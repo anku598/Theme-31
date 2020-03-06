@@ -1,47 +1,58 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
+import Theme31 from '@/components/ResumeTheme31';
+
 const routes = [{
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Theme31',
+    component: Theme31,
+    props: true
   },
-  {
-    path: '/portfolio',
-    name: 'Portfolio',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "about" */ '../views/Portfolio.vue')
-  },
-
-  {
-    path: '/works',
-    name: 'Works',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "about" */ '../views/Works.vue')
-  },
-
-  {
-    path: '/education',
-    name: 'Education',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "about" */ '../views/Education.vue')
-  },
-
+  // {
+  //   path: '/theme3',
+  //   name: 'Theme3',
+  //   component: Theme3,
+  //   props: true
+  // },
+  // {
+  //   path: '/theme21',
+  //   name: 'Theme21',
+  //   component: Theme21,
+  //   props: true
+  // },
+  // {
+  //   path: '/theme24',
+  //   name: 'Theme24',
+  //   component: Theme24,
+  //   props: true
+  // },
+  // {
+  //   path: '/theme13',
+  //   name: 'Theme13',
+  //   component: Theme13,
+  //   props: true
+  // },
+  // {
+  //   path: '/theme27',
+  //   name: 'Theme27',
+  //   component: Theme27,
+  //   props: true
+  // },
+  // {
+  //   path: '/theme19',
+  //   name: 'Theme19',
+  //   component: Theme19,
+  //   props: true
+  // }
 
 ]
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: '',
   routes
 })
 

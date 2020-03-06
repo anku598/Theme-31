@@ -60,6 +60,7 @@
 
     <v-tabs grow background-color="transparent " v-model="tab">
       <v-tab
+        grow
         :to="{path:item.routePath}"
         class="tab-bg mr-8"
         v-for="(item,idx) in items"
@@ -114,23 +115,5 @@ export default {
   box-shadow: 0px 4px 20px rgba(253, 191, 187, 0.44) !important;
   border-radius: 10px 10px 200px 10px !important;
   padding: 2rem;
-}
-
-.tab-bg {
-  background: linear-gradient(
-    99.48deg,
-    #f9bfda 1.07%,
-    #ffcad0 51.95%,
-    #fdbeba 89.88%
-  );
-  border-radius: 5px 5px 60px 5px;
-  color: #222d68 !important;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 600;
-}
-
-.v-tabs-slider {
-  display: none !important;
 }
 </style>

@@ -20,19 +20,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
-  padding: 5rem 2rem;
-  background: #ffffff;
-  box-shadow: 0px 0px 25px #e4eaf4;
-  border-radius: 20px 20px 260px 20px;
-  margin-top: 2rem;
-
-  h2 {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    line-height: 42px;
-    color: #fdbebb;
-  }
-}
 </style>
