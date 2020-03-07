@@ -227,6 +227,99 @@
                     </v-row>
                   </v-tab-item>
                 </v-col>
+
+                <v-col>
+                  <v-tab-item transition="fade-transition" reverse-transition="fade-transition">
+                    <v-tabs
+                      v-model="skillTab"
+                      class="secondary-tab"
+                      background-color="transparent"
+                      centered
+                      hide-slider
+                      active-class="isActiveSkill"
+                    >
+                      <v-tab
+                        class="skill-tab-bg"
+                        v-for="(item,idx) in skillsTab"
+                        :key="'skilltab' + idx"
+                        :ripple="false"
+                      >{{ item }}</v-tab>
+                    </v-tabs>
+                  </v-tab-item>
+                </v-col>
+
+                <div class="hold-skill-progress">
+                  <v-tabs-items v-model="skillTab" class="bg-transparent">
+                    <v-tab-item transition="fade-transition" reverse-transition="fade-transition">
+                      <v-row class="skill-wrap">
+                        <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                          <div class="logo-skill icon_ps">Ps</div>
+                          <div class="info-skill">
+                            <div class="head-skill">
+                              <span class="nameSkill">Photoshop</span>
+                              <span class="percentSkill">95%</span>
+                            </div>
+                            <v-progress-linear
+                              buffer-value="100"
+                              height="15px"
+                              value="95"
+                              background-color="rgba(228, 228, 228, 0.7)"
+                              :rounded="true"
+                            ></v-progress-linear>
+                          </div>
+                        </v-col>
+                        <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                          <div class="logo-skill icon_ps">Ps</div>
+                          <div class="info-skill">
+                            <div class="head-skill">
+                              <span class="nameSkill">Photoshop</span>
+                              <span class="percentSkill">95%</span>
+                            </div>
+                            <v-progress-linear
+                              buffer-value="100"
+                              height="15px"
+                              value="95"
+                              background-color="rgba(228, 228, 228, 0.7)"
+                              :rounded="true"
+                            ></v-progress-linear>
+                          </div>
+                        </v-col>
+                        <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                          <div class="logo-skill icon_ps">Ps</div>
+                          <div class="info-skill">
+                            <div class="head-skill">
+                              <span class="nameSkill">Photoshop</span>
+                              <span class="percentSkill">75%</span>
+                            </div>
+                            <v-progress-linear
+                              buffer-value="100"
+                              height="15px"
+                              value="75"
+                              background-color="rgba(228, 228, 228, 0.7)"
+                              :rounded="true"
+                            ></v-progress-linear>
+                          </div>
+                        </v-col>
+                        <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                          <div class="logo-skill icon_ps">Ps</div>
+                          <div class="info-skill">
+                            <div class="head-skill">
+                              <span class="nameSkill">Photoshop</span>
+                              <span class="percentSkill">25%</span>
+                            </div>
+                            <v-progress-linear
+                              buffer-value="100"
+                              height="15px"
+                              value="25"
+                              background-color="rgba(228, 228, 228, 0.7)"
+                              :rounded="true"
+                            ></v-progress-linear>
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-tab-item>
+                  </v-tabs-items>
+                </div>
               </v-tabs-items>
             </div>
           </v-row>
@@ -332,6 +425,7 @@ img {
 .hold-tabs {
   width: 100%;
   margin: 3rem 0;
+  margin-bottom: 0;
   .main-tab {
     width: 100%;
   }
@@ -353,6 +447,101 @@ img {
     &.isActive {
       opacity: 1;
     }
+  }
+}
+
+.secondary-tab {
+  opacity: 1;
+  position: relative;
+  &:before {
+    position: absolute !important;
+    content: '' !important;
+    bottom: 0%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    height: 3px;
+    background: rgba(34, 45, 104, 0.1);
+    border-radius: 15px;
+  }
+}
+
+.skill-wrap {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 3rem 0;
+
+  .box-skill {
+    display: flex;
+    width: 100%;
+    .head-skill {
+      display: flex;
+      justify-content: space-between;
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: normal;
+      color: #222d68;
+      font-weight: 600;
+      .nameSkill {
+        margin-left: 10px;
+      }
+    }
+    .logo-skill {
+      width: 50px;
+      height: 50px;
+      /* left: 201px; */
+      /* top: 845px; */
+      background: #222d68;
+      border: 5px solid #fdbfbc;
+      box-sizing: border-box;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      position: relative;
+      font-family: Rubik;
+      font-style: normal;
+    }
+    .info-skill {
+      flex: 1;
+    }
+  }
+}
+
+.skill-tab-bg {
+  position: relative;
+  transition: all 0.3s ease-out;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  color: #222d68 !important;
+  text-transform: capitalize;
+  opacity: 0.4;
+}
+
+.isActiveSkill {
+  opacity: 1;
+  position: relative;
+  &:before {
+    position: absolute !important;
+    content: '' !important;
+    top: inherit;
+    bottom: 0;
+    left: 50% !important;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 50%;
+    z-index: 3;
+    background: linear-gradient(
+      151.48deg,
+      #f9bfda 1.07%,
+      #ffcad0 51.95%,
+      #fdbeba 89.88%
+    );
+    border-radius: 15px;
+    opacity: 1 !important;
   }
 }
 
@@ -567,7 +756,14 @@ export default {
   data() {
     return {
       activeTab: null,
-      colorTab: false
+      skillTab: null,
+      colorTab: false,
+      skillsTab: [
+        'Programming languages',
+        'Frameworks/ Databases',
+        'Design Skills',
+        'Software'
+      ]
     };
   }
 };

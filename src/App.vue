@@ -1,12 +1,12 @@
 <template>
   <v-app id="main">
     <v-content>
-      <h3 class="titleHome">Workforce resume theme</h3>
+      <!-- <h3 class="titleHome">Workforce resume theme</h3>
       <ul class="mynav d-flex">
         <li v-for="(theme,i) in routes" :key="i">
           <router-link :to="theme.path">{{theme.name}}</router-link>
         </li>
-      </ul>
+      </ul>-->
       <router-view :freelancer="dataFreelancer"></router-view>
     </v-content>
   </v-app>
