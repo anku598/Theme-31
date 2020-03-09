@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style lang = 'scss' scoped>
+<style lang = 'scss'>
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap|Material+Icons');
 *,
 *::before,
@@ -198,5 +198,16 @@ embed {
 
 .mynav li a.router-link-exact-active {
   color: #ff5252 !important;
+}
+
+.progress-bg {
+  .v-progress-linear__determinate {
+    background: linear-gradient(
+      138.05deg,
+      #f9bfda 1.07%,
+      #ffcad0 51.95%,
+      #fdbeba 89.88%
+    );
+  }
 }
 </style>

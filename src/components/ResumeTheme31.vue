@@ -4,11 +4,11 @@
       <v-row class="freelancerCard">
         <v-col lg="12" md="12" cols="12" class="resumeCardRight">
           <v-row>
-            <v-col lg="7">
+            <v-col lg="7" cols="12" sm="8">
               <v-card class="profile-bg-card">
                 <div class="profile-info">
-                  <v-row>
-                    <v-col lg="2">
+                  <v-row class="hidden-sm-and-down">
+                    <v-col lg="2" sm="2">
                       <v-avatar size="100" class="mr-2">
                         <img src="../assets/img/profile-pic.png" alt />
                       </v-avatar>
@@ -45,12 +45,56 @@
                       </div>
                     </v-col>
                   </v-row>
+
+                  <div class="hidden-md-and-up d-flex justify-space-around">
+                    <v-avatar size="100" class="mr-2">
+                      <img src="../assets/img/profile-pic.png" alt />
+                    </v-avatar>
+
+                    <div>
+                      <div class="name-info">
+                        <h2 class="freelancer-name">Beverly Andrews</h2>
+                        <p>User interface designer</p>
+                      </div>
+
+                      <div class="resume">
+                        <a href="#">
+                          <v-icon>mdi-email</v-icon>
+                        </a>
+                        <a href="#" class="download">
+                          <span>pdf</span>
+                          <v-icon>mdi-download</v-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </v-card>
             </v-col>
 
-            <v-col lg="5" class="d-flex justify-end">
-              <div class="social-wrap">
+            <v-col lg="5" cols="12" class="d-flex justify-end justify-sm-center">
+              <div class="social-wrap hidden-sm-and-down">
+                <a href="#">
+                  <v-icon>mdi-map-marker</v-icon>
+                </a>
+                <a href="#">
+                  <v-icon>mdi-whatsapp</v-icon>
+                </a>
+                <a href="#">
+                  <v-icon>mdi-google-plus</v-icon>
+                </a>
+              </div>
+
+              <div class="social-wrap hidden-md-and-up">
+                <a href="#">
+                  <v-icon>mdi-map-marker</v-icon>
+                </a>
+                <a href="#">
+                  <v-icon>mdi-whatsapp</v-icon>
+                </a>
+                <a href="#">
+                  <v-icon>mdi-google-plus</v-icon>
+                </a>
                 <a href="#">
                   <v-icon>mdi-map-marker</v-icon>
                 </a>
@@ -75,7 +119,8 @@
                   <v-tab
                     class="tab-bg mr-8"
                     v-for="(item,idx) in freelancer.agent.resume_tabs"
-                    :key="'tab' + idx"
+                    :key="idx"
+                    :href="`#navTab-${idx}`"
                     :ripple="false"
                   >
                     <v-icon class="tab-icon">mdi-{{item.icon}}</v-icon>
@@ -88,7 +133,11 @@
             <div class="hold-contents">
               <v-tabs-items class="bg-transparent" v-model="activeTab">
                 <v-col>
-                  <v-tab-item transition="fade-transition" reverse-transition="fade-transition">
+                  <v-tab-item
+                    transition="fade-transition"
+                    reverse-transition="fade-transition"
+                    value="navTab-0"
+                  >
                     <div class="content">
                       <h2 class="display-1">About</h2>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nemo illum ex quae animi modi molestias</p>
@@ -100,7 +149,11 @@
                 </v-col>
 
                 <v-col>
-                  <v-tab-item transition="fade-transition" reverse-transition="fade-transition">
+                  <v-tab-item
+                    transition="fade-transition"
+                    reverse-transition="fade-transition"
+                    value="navTab-1"
+                  >
                     <v-row>
                       <v-col sm="6" md="3" lg="3" xl="3" cols="12">
                         <img src="@/assets/img/portfolio-1.png" alt="Portfolio Image" />
@@ -129,6 +182,7 @@
                     class="works"
                     transition="fade-transition"
                     reverse-transition="fade-transition"
+                    value="navTab-2"
                   >
                     <v-row>
                       <v-col sm="12" md="6" lg="6" xl="6" cols="12" pb="3">
@@ -192,6 +246,7 @@
                     class="education"
                     transition="fade-transition"
                     reverse-transition="fade-transition"
+                    value="navTab-3"
                   >
                     <v-row>
                       <v-col sm="12" md="6" lg="6" xl="6" cols="12" pb="3">
@@ -229,7 +284,11 @@
                 </v-col>
 
                 <v-col>
-                  <v-tab-item transition="fade-transition" reverse-transition="fade-transition">
+                  <v-tab-item
+                    transition="fade-transition"
+                    reverse-transition="fade-transition"
+                    value="navTab-4"
+                  >
                     <v-tabs
                       v-model="skillTab"
                       class="secondary-tab"
@@ -241,85 +300,94 @@
                       <v-tab
                         class="skill-tab-bg"
                         v-for="(item,idx) in skillsTab"
-                        :key="'skilltab' + idx"
+                        :href="`#skillTab-${idx}`"
+                        :key="idx"
                         :ripple="false"
                       >{{ item }}</v-tab>
                     </v-tabs>
                   </v-tab-item>
-                </v-col>
 
-                <div class="hold-skill-progress">
-                  <v-tabs-items v-model="skillTab" class="bg-transparent">
-                    <v-tab-item transition="fade-transition" reverse-transition="fade-transition">
-                      <v-row class="skill-wrap">
-                        <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                          <div class="logo-skill icon_ps">Ps</div>
-                          <div class="info-skill">
-                            <div class="head-skill">
-                              <span class="nameSkill">Photoshop</span>
-                              <span class="percentSkill">95%</span>
+                  <div class="hold-skill-progress">
+                    <v-tabs-items v-model="skillTab" class="bg-transparent">
+                      <v-tab-item
+                        transition="fade-transition"
+                        reverse-transition="fade-transition"
+                        value="skillTab-0"
+                      >
+                        <v-row class="skill-wrap">
+                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <div class="logo-skill icon_ps">Ps</div>
+                            <div class="info-skill">
+                              <div class="head-skill">
+                                <span class="nameSkill">Photoshop</span>
+                                <span class="percentSkill">95%</span>
+                              </div>
+                              <v-progress-linear
+                                class="progress-bg"
+                                buffer-value="100"
+                                height="15px"
+                                value="95"
+                                background-color="rgba(228, 228, 228, 0.7)"
+                                :rounded="true"
+                              ></v-progress-linear>
                             </div>
-                            <v-progress-linear
-                              buffer-value="100"
-                              height="15px"
-                              value="95"
-                              background-color="rgba(228, 228, 228, 0.7)"
-                              :rounded="true"
-                            ></v-progress-linear>
-                          </div>
-                        </v-col>
-                        <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                          <div class="logo-skill icon_ps">Ps</div>
-                          <div class="info-skill">
-                            <div class="head-skill">
-                              <span class="nameSkill">Photoshop</span>
-                              <span class="percentSkill">95%</span>
+                          </v-col>
+                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <div class="logo-skill icon_ps">Ps</div>
+                            <div class="info-skill">
+                              <div class="head-skill">
+                                <span class="nameSkill">Photoshop</span>
+                                <span class="percentSkill">95%</span>
+                              </div>
+                              <v-progress-linear
+                                class="progress-bg"
+                                buffer-value="100"
+                                height="15px"
+                                value="95"
+                                background-color="rgba(228, 228, 228, 0.7)"
+                                :rounded="true"
+                              ></v-progress-linear>
                             </div>
-                            <v-progress-linear
-                              buffer-value="100"
-                              height="15px"
-                              value="95"
-                              background-color="rgba(228, 228, 228, 0.7)"
-                              :rounded="true"
-                            ></v-progress-linear>
-                          </div>
-                        </v-col>
-                        <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                          <div class="logo-skill icon_ps">Ps</div>
-                          <div class="info-skill">
-                            <div class="head-skill">
-                              <span class="nameSkill">Photoshop</span>
-                              <span class="percentSkill">75%</span>
+                          </v-col>
+                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <div class="logo-skill icon_ps">Ps</div>
+                            <div class="info-skill">
+                              <div class="head-skill">
+                                <span class="nameSkill">Photoshop</span>
+                                <span class="percentSkill">75%</span>
+                              </div>
+                              <v-progress-linear
+                                class="progress-bg"
+                                buffer-value="100"
+                                height="15px"
+                                value="75"
+                                background-color="rgba(228, 228, 228, 0.7)"
+                                :rounded="true"
+                              ></v-progress-linear>
                             </div>
-                            <v-progress-linear
-                              buffer-value="100"
-                              height="15px"
-                              value="75"
-                              background-color="rgba(228, 228, 228, 0.7)"
-                              :rounded="true"
-                            ></v-progress-linear>
-                          </div>
-                        </v-col>
-                        <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                          <div class="logo-skill icon_ps">Ps</div>
-                          <div class="info-skill">
-                            <div class="head-skill">
-                              <span class="nameSkill">Photoshop</span>
-                              <span class="percentSkill">25%</span>
+                          </v-col>
+                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <div class="logo-skill icon_ps">Ps</div>
+                            <div class="info-skill">
+                              <div class="head-skill">
+                                <span class="nameSkill">Photoshop</span>
+                                <span class="percentSkill">25%</span>
+                              </div>
+                              <v-progress-linear
+                                class="progress-bg"
+                                buffer-value="100"
+                                height="15px"
+                                value="25"
+                                background-color="rgba(228, 228, 228, 0.7)"
+                                :rounded="true"
+                              ></v-progress-linear>
                             </div>
-                            <v-progress-linear
-                              buffer-value="100"
-                              height="15px"
-                              value="25"
-                              background-color="rgba(228, 228, 228, 0.7)"
-                              :rounded="true"
-                            ></v-progress-linear>
-                          </div>
-                        </v-col>
-                      </v-row>
-                    </v-tab-item>
-                  </v-tabs-items>
-                </div>
+                          </v-col>
+                        </v-row>
+                      </v-tab-item>
+                    </v-tabs-items>
+                  </div>
+                </v-col>
               </v-tabs-items>
             </div>
           </v-row>
@@ -349,6 +417,9 @@ img {
   box-shadow: 0px 4px 20px rgba(253, 191, 187, 0.44) !important;
   border-radius: 10px 10px 200px 10px !important;
   padding: 2rem;
+  @media screen and (max-width: 575.98px) {
+    border-radius: 5px 5px 120px 5px;
+  }
 }
 .hold_theme13 {
   max-width: 1460px;
@@ -377,6 +448,17 @@ img {
     background: #fff;
     display: none;
     margin: 5px;
+    @media screen and (max-width: 575.98px) {
+      width: 40px !important;
+      height: 40px !important;
+      background: linear-gradient(
+        92.63deg,
+        #f9bfda 1.07%,
+        #ffcad0 51.95%,
+        #fdbeba 89.88%
+      );
+      box-shadow: 0px 4px 20px rgba(253, 191, 187, 0.44);
+    }
 
     box-shadow: 0px 0px 20px rgba(187, 209, 244, 0.25);
     &.download {
@@ -386,17 +468,26 @@ img {
       padding: 27px;
       display: flex;
       flex-direction: column;
+      @media screen and (max-width: 575.98px) {
+        padding: 0;
+      }
 
       span {
         text-transform: uppercase;
         color: #222d68;
         font-weight: 600;
         font-size: 13px;
+        @media screen and (max-width: 575.98px) {
+          display: none;
+        }
       }
     }
     i {
       color: #222d68 !important;
       font-size: 30px;
+      @media screen and (max-width: 575.98px) {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -410,6 +501,9 @@ img {
     color: #222d68;
     font-size: 1.8rem !important;
     text-transform: capitalize;
+    @media screen and (max-width: 575.98px) {
+      font-size: 20px !important;
+    }
   }
   p {
     font-family: Rubik;
