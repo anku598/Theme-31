@@ -1,13 +1,13 @@
 <template>
   <div id="ResumeTheme31">
-    <v-container class="hold_theme13" fluid>
+    <v-container class="hold_theme31" fluid>
       <v-row class="freelancerCard">
         <v-col lg="12" md="12" cols="12" class="resumeCardRight">
           <v-row>
-            <v-col lg="7" cols="12" sm="8">
+            <v-col lg="7" cols="12" sm="12" md="8">
               <v-card class="profile-bg-card">
                 <div class="profile-info">
-                  <v-row class="hidden-sm-and-down">
+                  <v-row class="content-hide">
                     <v-col lg="2" sm="2">
                       <v-avatar size="100" class="mr-2">
                         <img src="../assets/img/profile-pic.png" alt />
@@ -46,25 +46,27 @@
                     </v-col>
                   </v-row>
 
-                  <div class="hidden-md-and-up d-flex justify-space-around">
-                    <v-avatar size="100" class="mr-2">
-                      <img src="../assets/img/profile-pic.png" alt />
-                    </v-avatar>
+                  <div class="content-show">
+                    <div class="d-flex justify-space-around">
+                      <v-avatar size="100" class="mr-2">
+                        <img src="../assets/img/profile-pic.png" alt />
+                      </v-avatar>
 
-                    <div>
-                      <div class="name-info">
-                        <h2 class="freelancer-name">Beverly Andrews</h2>
-                        <p>User interface designer</p>
-                      </div>
+                      <div>
+                        <div class="name-info">
+                          <h2 class="freelancer-name">Beverly Andrews</h2>
+                          <p>User interface designer</p>
+                        </div>
 
-                      <div class="resume">
-                        <a href="#">
-                          <v-icon>mdi-email</v-icon>
-                        </a>
-                        <a href="#" class="download">
-                          <span>pdf</span>
-                          <v-icon>mdi-download</v-icon>
-                        </a>
+                        <div class="resume">
+                          <a href="#" class="email">
+                            <v-icon>mdi-email</v-icon>
+                          </a>
+                          <a href="#" class="download">
+                            <span>pdf</span>
+                            <v-icon>mdi-download</v-icon>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -72,8 +74,14 @@
               </v-card>
             </v-col>
 
-            <v-col lg="5" cols="12" class="d-flex justify-end justify-sm-center">
-              <div class="social-wrap hidden-sm-and-down">
+            <v-col
+              lg="5"
+              cols="12"
+              sm="12"
+              md="4"
+              class="d-flex justify-lg-end justify-md-end justify-sm-center justify-center"
+            >
+              <div class="social-wrap content-hide">
                 <a href="#">
                   <v-icon>mdi-map-marker</v-icon>
                 </a>
@@ -85,7 +93,7 @@
                 </a>
               </div>
 
-              <div class="social-wrap hidden-md-and-up">
+              <div class="social-wrap content-show">
                 <a href="#">
                   <v-icon>mdi-map-marker</v-icon>
                 </a>
@@ -439,8 +447,8 @@ img {
 .resume,
 .social-wrap {
   a {
-    width: 60px !important;
-    height: 60px !important;
+    width: 40px !important;
+    height: 40px !important;
     border-radius: 50%;
     display: inline-flex !important;
     align-items: center;
@@ -448,6 +456,9 @@ img {
     background: #fff;
     display: none;
     margin: 5px;
+    &.email {
+      background: #fff !important;
+    }
     @media screen and (max-width: 575.98px) {
       width: 40px !important;
       height: 40px !important;
@@ -463,9 +474,9 @@ img {
     box-shadow: 0px 0px 20px rgba(187, 209, 244, 0.25);
     &.download {
       background: #fec8d1 !important;
-      border: 5px solid #ffffff !important;
+      border: 3px solid #ffffff !important;
       box-sizing: border-box !important;
-      padding: 27px;
+      padding: 17px;
       display: flex;
       flex-direction: column;
       @media screen and (max-width: 575.98px) {
@@ -476,7 +487,7 @@ img {
         text-transform: uppercase;
         color: #222d68;
         font-weight: 600;
-        font-size: 13px;
+        font-size: 8px;
         @media screen and (max-width: 575.98px) {
           display: none;
         }
@@ -484,11 +495,25 @@ img {
     }
     i {
       color: #222d68 !important;
-      font-size: 30px;
+      font-size: 19px;
       @media screen and (max-width: 575.98px) {
         font-size: 14px;
       }
     }
+  }
+}
+
+.content-show {
+  display: none !important;
+}
+
+@media screen and (max-width: 575.98px) {
+  .content-show {
+    display: block !important;
+  }
+
+  .content-hide {
+    display: none !important;
   }
 }
 
