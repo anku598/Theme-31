@@ -528,6 +528,7 @@ img {
     text-transform: capitalize;
     @media screen and (max-width: 575.98px) {
       font-size: 20px !important;
+      line-height: 28px;
     }
   }
   p {
