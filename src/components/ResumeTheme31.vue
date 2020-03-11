@@ -429,7 +429,7 @@ img {
     border-radius: 5px 5px 120px 5px;
   }
 }
-.hold_theme13 {
+.hold_theme31 {
   max-width: 1460px;
   margin: 0 auto;
 }
