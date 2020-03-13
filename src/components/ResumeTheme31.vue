@@ -83,13 +83,16 @@
             >
               <div class="social-wrap mt-10 content-hide">
                 <a href="#">
-                  <v-icon>mdi-map-marker</v-icon>
+                  <img src="../assets/behance.svg" alt />
                 </a>
                 <a href="#">
-                  <v-icon>mdi-whatsapp</v-icon>
+                  <img src="../assets/dribble.svg" alt />
                 </a>
                 <a href="#">
-                  <v-icon>mdi-google-plus</v-icon>
+                  <img src="../assets/instagram.svg" alt />
+                </a>
+                <a href="#">
+                  <img src="../assets/linked-in.svg" alt />
                 </a>
               </div>
 
@@ -104,16 +107,27 @@
                   <v-icon>mdi-google-plus</v-icon>
                 </a>
                 <a href="#">
-                  <v-icon>mdi-map-marker</v-icon>
+                  <img src="../assets/behance.svg" alt />
                 </a>
                 <a href="#">
-                  <v-icon>mdi-whatsapp</v-icon>
+                  <img src="../assets/dribble.svg" alt />
                 </a>
                 <a href="#">
-                  <v-icon>mdi-google-plus</v-icon>
+                  <img src="../assets/instagram.svg" alt />
+                </a>
+                <a href="#">
+                  <img src="../assets/linked-in.svg" alt />
                 </a>
               </div>
             </v-col>
+
+            <div class="bg-eclipse1">
+              \
+              <img src="../assets/bg-eclipse1.svg" alt />
+            </div>
+            <div class="bg-eclipse2">
+              <img src="../assets/bg-eclipse2.svg" alt />
+            </div>
 
             <v-col>
               <div class="hold-tabs">
@@ -126,12 +140,18 @@
                 >
                   <v-tab
                     class="tab-bg mr-8"
-                    v-for="(item,idx) in freelancer.agent.resume_tabs"
+                    v-for="(item,idx) in resume_tabs"
                     :key="idx"
                     :href="`#navTab-${idx}`"
                     :ripple="false"
                   >
-                    <v-icon class="tab-icon">mdi-{{item.icon}}</v-icon>
+                    <!-- <v-icon class="tab-icon">mdi-{{item.icon}}</v-icon> -->
+                    <!-- <v-icon class="tab-icon">
+                     
+                    </v-icon>-->
+                    <div class="label-icon">
+                      <img :src="getImgUrl(item.icon)" alt />
+                    </div>
                     {{ item.label }}
                   </v-tab>
                 </v-tabs>
@@ -163,23 +183,23 @@
                     value="navTab-1"
                   >
                     <v-row>
-                      <v-col sm="6" md="3" lg="3" xl="3" cols="12">
+                      <v-col class="case-image" sm="6" md="3" lg="3" xl="3" cols="12">
                         <img src="@/assets/img/portfolio-1.png" alt="Portfolio Image" />
                       </v-col>
-                      <v-col lg="3" md="3" sm="6" xl="3" cols="12">
+                      <v-col class="case-image" lg="3" md="3" sm="6" xl="3" cols="12">
                         <img src="@/assets/img/portfolio-2.png" alt="Portfolio Image" />
                       </v-col>
-                      <v-col cols="12" lg="3" md="3" sm="6" xl="3">
+                      <v-col class="case-image" cols="12" lg="3" md="3" sm="6" xl="3">
                         <img src="@/assets/img/potfolio-3.png" alt="Portfolio Image" />
                       </v-col>
-                      <v-col cols="12" lg="3" md="3" sm="6" xl="3">
+                      <v-col class="case-image" cols="12" lg="3" md="3" sm="6" xl="3">
                         <img src="@/assets/img/portfolio-4.png" alt="Portfolio Image" />
                       </v-col>
-                      <v-col cols="12" lg="3" md="3" sm="6" xl="3">
-                        <img src="@/assets/img/portfolio-5.png" alt="Portfolio Image" />
+                      <v-col class="case-image" cols="12" lg="3" md="3" sm="6" xl="3">
+                        <img src="@/assets/img/potfolio-3.png" alt="Portfolio Image" />
                       </v-col>
-                      <v-col cols="12" lg="3" md="3" sm="6" xl="3">
-                        <img src="@/assets/img/portfolio-5.png" alt="Portfolio Image" />
+                      <v-col class="case-image" cols="12" lg="3" md="3" sm="6" xl="3">
+                        <img src="@/assets/img/portfolio-4.png" alt="Portfolio Image" />
                       </v-col>
                     </v-row>
                   </v-tab-item>
@@ -197,7 +217,60 @@
                         <v-card class="bg-card">
                           <v-row>
                             <v-col md="2" cols="2">
-                              <div class="avatar ml-2">
+                              <div class="avatar">
+                                <img src="@/assets/img/works-icon.png" alt="Works Icon" />
+                              </div>
+                            </v-col>
+
+                            <v-col
+                              md="3"
+                              sm="10"
+                              cols="10"
+                              class="company-info ml-auto hidden-sm-and-down"
+                            >
+                              <h2 class="company-title">Google</h2>
+                              <div>
+                                <p class="small-text">duration:</p>
+                                <p class="date">Dec 19 - Present</p>
+                              </div>
+                            </v-col>
+
+                            <v-col
+                              md="7"
+                              sm="10"
+                              cols="10"
+                              class="job-info ml-auto hidden-sm-and-down"
+                            >
+                              <p class="job-title">User interface designer</p>
+                              <p
+                                class="desc"
+                              >I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes.</p>
+                            </v-col>
+
+                            <v-col
+                              md="3"
+                              sm="10"
+                              cols="10"
+                              class="company-info ml-auto hidden-sm-and-up"
+                            >
+                              <h2 class="company-title">Google</h2>
+                              <p class="job-title">User interface designer</p>
+                              <div class="d-inline-flex align-center mt-4 mb-4">
+                                <p class="small-text mr-1">duration:</p>
+                                <p class="date">Dec 19 - Present</p>
+                              </div>
+                              <p
+                                class="desc"
+                              >I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes.</p>
+                            </v-col>
+                          </v-row>
+                        </v-card>
+                      </v-col>
+                      <v-col sm="12" md="6" lg="6" xl="6" cols="12" pb="3">
+                        <v-card class="bg-card">
+                          <v-row>
+                            <v-col md="2" cols="2">
+                              <div class="avatar">
                                 <img src="@/assets/img/works-icon.png" alt="Works Icon" />
                               </div>
                             </v-col>
@@ -261,7 +334,38 @@
                         <v-card class="bg-card">
                           <v-row>
                             <v-col md="2" cols="2">
-                              <div class="avatar ml-2">
+                              <div class="avatar">
+                                <img src="@/assets/img/works-icon.png" alt="Works Icon" />
+                              </div>
+                            </v-col>
+
+                            <v-col
+                              md="10"
+                              sm="10"
+                              cols="10"
+                              class="company-info hidden-sm-and-down"
+                            >
+                              <h2 class="company-title">California Institute of Technology</h2>
+                              <div class="d-flex align-center justify-space-between small-info">
+                                <div class="d-flex align-center">
+                                  <p class="small-text">M.Sc in HCI</p>
+                                  <p class="date">Dec 19 - Present</p>
+                                </div>
+                                <p class="university">university</p>
+                              </div>
+                              <p
+                                class="desc"
+                              >I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes.</p>
+                            </v-col>
+                          </v-row>
+                        </v-card>
+                      </v-col>
+
+                      <v-col sm="12" md="6" lg="6" xl="6" cols="12" pb="3">
+                        <v-card class="bg-card">
+                          <v-row>
+                            <v-col md="2" cols="2">
+                              <div class="avatar">
                                 <img src="@/assets/img/works-icon.png" alt="Works Icon" />
                               </div>
                             </v-col>
@@ -415,6 +519,21 @@ a {
 img {
   width: 100%;
 }
+
+.bg-eclipse1 {
+  position: absolute;
+  top: -24px;
+  right: 0;
+}
+
+.bg-eclipse2 {
+  position: absolute;
+  top: 55px;
+  left: 20px;
+  img {
+    width: 55%;
+  }
+}
 .profile-bg-card {
   background: linear-gradient(
     99.62deg,
@@ -432,6 +551,7 @@ img {
 .hold_theme31 {
   max-width: 1460px;
   margin: 0 auto;
+  position: relative;
 }
 
 .v-tabs-bar.v-slide-group--is-overflowing.v-tabs-bar--is-mobile:not(.v-tabs-bar--show-arrows):not(.v-slide-group--has-affixes)
@@ -446,6 +566,7 @@ img {
 
 .resume,
 .social-wrap {
+  display: flex;
   a {
     width: 40px !important;
     height: 40px !important;
@@ -456,6 +577,9 @@ img {
     background: #fff;
     display: none;
     margin: 5px;
+    img {
+      width: 50%;
+    }
     &.email {
       background: #fff !important;
     }
@@ -503,13 +627,19 @@ img {
   }
 }
 
+.case-image {
+  img {
+    box-shadow: 0px 15px 30px rgba(56, 82, 206, 0.11);
+  }
+}
+
 .content-show {
   display: none !important;
 }
 
 @media screen and (max-width: 575.98px) {
   .content-show {
-    display: block !important;
+    display: flex !important;
   }
 
   .content-hide {
@@ -570,6 +700,23 @@ img {
   }
 }
 
+.label-icon {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -16px;
+  margin-right: 8px;
+  box-shadow: 0px 0px 20px rgba(187, 209, 244, 0.25);
+  img {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
 .secondary-tab {
   opacity: 1;
   position: relative;
@@ -589,7 +736,7 @@ img {
 .skill-wrap {
   max-width: 80%;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 8rem 0;
 
   .box-skill {
     display: flex;
@@ -868,7 +1015,7 @@ img {
 }
 </style>
 
-<script >
+<script lang='js' >
 export default {
   name: 'Theme31',
   props: ['freelancer'],
@@ -878,6 +1025,33 @@ export default {
       activeTab: null,
       skillTab: null,
       colorTab: false,
+      resume_tabs: [
+        {
+          name: 'about',
+          label: 'About',
+          icon: 'user.svg'
+        },
+        {
+          name: 'portfolio',
+          label: 'Portfolio',
+          icon: 'case.svg'
+        },
+        {
+          name: 'work',
+          label: 'Work',
+          icon: 'growth.svg'
+        },
+        {
+          name: 'education',
+          label: 'Education',
+          icon: 'image.svg'
+        },
+        {
+          name: 'skills',
+          label: 'Skills',
+          icon: 'mortarboard.svg'
+        }
+      ],
       skillsTab: [
         'Programming languages',
         'Frameworks/ Databases',
@@ -885,6 +1059,11 @@ export default {
         'Software'
       ]
     };
+  },
+  methods: {
+    getImgUrl(pic) {
+      return require('../assets/' + pic);
+    }
   }
 };
 </script>
