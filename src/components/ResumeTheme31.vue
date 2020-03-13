@@ -81,7 +81,7 @@
               md="4"
               class="d-flex justify-lg-end justify-md-end justify-sm-center justify-center"
             >
-              <div class="social-wrap content-hide">
+              <div class="social-wrap mt-10 content-hide">
                 <a href="#">
                   <v-icon>mdi-map-marker</v-icon>
                 </a>
