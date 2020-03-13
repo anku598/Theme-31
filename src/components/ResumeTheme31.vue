@@ -10,7 +10,7 @@
                   <v-row class="content-hide">
                     <v-col lg="2" sm="2">
                       <v-avatar size="100" class="mr-2">
-                        <img src="../assets/img/profile-pic.png" alt />
+                        <img src="@/assets/img/profile-pic.png" alt />
                       </v-avatar>
                     </v-col>
 
@@ -49,7 +49,7 @@
                   <div class="content-show">
                     <div class="d-flex justify-space-around">
                       <v-avatar size="100" class="mr-2">
-                        <img src="../assets/img/profile-pic.png" alt />
+                        <img src="@/assets/img/profile-pic.png" alt />
                       </v-avatar>
 
                       <div>
@@ -83,16 +83,16 @@
             >
               <div class="social-wrap mt-10 content-hide">
                 <a href="#">
-                  <img src="../assets/behance.svg" alt />
+                  <img src="@/assets/behance.svg" alt />
                 </a>
                 <a href="#">
-                  <img src="../assets/dribble.svg" alt />
+                  <img src="@/assets/dribble.svg" alt />
                 </a>
                 <a href="#">
-                  <img src="../assets/instagram.svg" alt />
+                  <img src="@/assets/instagram.svg" alt />
                 </a>
                 <a href="#">
-                  <img src="../assets/linked-in.svg" alt />
+                  <img src="@/assets/linked-in.svg" alt />
                 </a>
               </div>
 
@@ -107,26 +107,26 @@
                   <v-icon>mdi-google-plus</v-icon>
                 </a>
                 <a href="#">
-                  <img src="../assets/behance.svg" alt />
+                  <img src="@/assets/behance.svg" alt />
                 </a>
                 <a href="#">
-                  <img src="../assets/dribble.svg" alt />
+                  <img src="@/assets/dribble.svg" alt />
                 </a>
                 <a href="#">
-                  <img src="../assets/instagram.svg" alt />
+                  <img src="@/assets/instagram.svg" alt />
                 </a>
                 <a href="#">
-                  <img src="../assets/linked-in.svg" alt />
+                  <img src="@/assets/linked-in.svg" alt />
                 </a>
               </div>
             </v-col>
 
             <div class="bg-eclipse1">
               \
-              <img src="../assets/bg-eclipse1.svg" alt />
+              <img src="@/assets/bg-eclipse1.svg" alt />
             </div>
             <div class="bg-eclipse2">
-              <img src="../assets/bg-eclipse2.svg" alt />
+              <img src="@/assets/bg-eclipse2.svg" alt />
             </div>
 
             <v-col>
@@ -541,6 +541,8 @@ img {
     #ffcad0 51.95%,
     #fdbeba 89.88%
   );
+  position: relative;
+  z-index: 5;
   box-shadow: 0px 4px 20px rgba(253, 191, 187, 0.44) !important;
   border-radius: 10px 10px 200px 10px !important;
   padding: 2rem;
@@ -567,6 +569,8 @@ img {
 .resume,
 .social-wrap {
   display: flex;
+  position: relative;
+  z-index: 5;
   a {
     width: 40px !important;
     height: 40px !important;
@@ -1062,7 +1066,7 @@ export default {
   },
   methods: {
     getImgUrl(pic) {
-      return require('../assets/' + pic);
+      return require('@/assets/' + pic);
     }
   }
 };
