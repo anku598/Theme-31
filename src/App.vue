@@ -56,7 +56,7 @@ body {
 }
 
 .theme--light.v-application {
-  background: #f2f5f9;
+  background: #f2f5f9 !important;
 }
 
 a {
