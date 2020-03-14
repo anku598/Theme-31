@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Theme31 from '@/components/ResumeTheme31';
+import Theme17 from '@/components/ResumeTheme17';
 
 const routes = [{
     path: '/',
@@ -11,12 +12,12 @@ const routes = [{
     component: Theme31,
     props: true
   },
-  // {
-  //   path: '/theme3',
-  //   name: 'Theme3',
-  //   component: Theme3,
-  //   props: true
-  // },
+  {
+    path: '/theme17',
+    name: 'Theme17',
+    component: Theme17,
+    props: true
+  },
   // {
   //   path: '/theme21',
   //   name: 'Theme21',
