@@ -695,9 +695,11 @@ img {
   }
 }
 .hold_theme31 {
-  max-width: 1460px;
+  max-width: 1920px;
   margin: 0 auto;
   position: relative;
+}
+#ResumeTheme31 {
   background: #f2f5f9 !important;
 }
 
