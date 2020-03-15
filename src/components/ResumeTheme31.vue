@@ -141,7 +141,8 @@
                     class="tab-bg mr-8"
                     v-for="(item,idx) in resume_tabs"
                     :key="idx"
-                    :href="`#navTab-${idx}`"
+                    :href="`#tab-${idx}`"
+                    @click="setTab(item)"
                     :ripple="false"
                   >
                     <!-- <v-icon class="tab-icon">mdi-{{item.icon}}</v-icon> -->
@@ -158,29 +159,31 @@
             </v-col>
 
             <div class="hold-contents">
-              <v-tabs-items class="bg-transparent" v-model="activeTab">
-                <v-col>
-                  <v-tab-item
-                    transition="fade-transition"
-                    reverse-transition="fade-transition"
-                    value="navTab-0"
-                  >
-                    <div class="content">
-                      <h2 class="display-1">About</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nemo illum ex quae animi modi molestias</p>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nemo illum ex quae animi modi molestias</p>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nemo illum ex quae animi modi molestias</p>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nemo illum ex quae animi modi molestias</p>
-                    </div>
-                  </v-tab-item>
-                </v-col>
+              <v-tabs-items
+                class="bg-transparent"
+                v-model="activeTab"
+                active-class="content-margin"
+              >
+                <v-tab-item
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-0"
+                >
+                  <div class="content content_margin">
+                    <h2 class="display-1">About</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nemo illum ex quae animi modi molestias</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nemo illum ex quae animi modi molestias</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nemo illum ex quae animi modi molestias</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nemo illum ex quae animi modi molestias</p>
+                  </div>
+                </v-tab-item>
 
-                <v-col>
-                  <v-tab-item
-                    transition="fade-transition"
-                    reverse-transition="fade-transition"
-                    value="navTab-1"
-                  >
+                <v-tab-item
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-1"
+                >
+                  <div class="content_margin">
                     <v-row>
                       <v-col class="case-image" sm="6" md="3" lg="3" xl="3" cols="12">
                         <img src="@/assets/img/portfolio-1.png" alt="Portfolio Image" />
@@ -201,16 +204,16 @@
                         <img src="@/assets/img/portfolio-4.png" alt="Portfolio Image" />
                       </v-col>
                     </v-row>
-                  </v-tab-item>
-                </v-col>
+                  </div>
+                </v-tab-item>
 
-                <v-col>
-                  <v-tab-item
-                    class="works"
-                    transition="fade-transition"
-                    reverse-transition="fade-transition"
-                    value="navTab-2"
-                  >
+                <v-tab-item
+                  class="works"
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-2"
+                >
+                  <div class="content_margin">
                     <v-row>
                       <v-col sm="12" md="6" lg="6" xl="6" cols="12" pb="3">
                         <v-card class="bg-card">
@@ -319,15 +322,16 @@
                         </v-card>
                       </v-col>
                     </v-row>
-                  </v-tab-item>
-                </v-col>
-                <v-col>
-                  <v-tab-item
-                    class="education"
-                    transition="fade-transition"
-                    reverse-transition="fade-transition"
-                    value="navTab-3"
-                  >
+                  </div>
+                </v-tab-item>
+
+                <v-tab-item
+                  class="education"
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-3"
+                >
+                  <div class="content_margin">
                     <v-row>
                       <v-col sm="12" md="6" lg="6" xl="6" cols="12" pb="3">
                         <v-card class="bg-card">
@@ -338,12 +342,7 @@
                               </div>
                             </v-col>
 
-                            <v-col
-                              md="10"
-                              sm="10"
-                              cols="10"
-                              class="company-info hidden-sm-and-down"
-                            >
+                            <v-col md="10" sm="10" cols="10" class="company-info">
                               <h2 class="company-title">California Institute of Technology</h2>
                               <div class="d-flex align-center justify-space-between small-info">
                                 <div class="d-flex align-center">
@@ -369,12 +368,7 @@
                               </div>
                             </v-col>
 
-                            <v-col
-                              md="10"
-                              sm="10"
-                              cols="10"
-                              class="company-info hidden-sm-and-down"
-                            >
+                            <v-col md="10" sm="10" cols="10" class="company-info">
                               <h2 class="company-title">California Institute of Technology</h2>
                               <div class="d-flex align-center justify-space-between small-info">
                                 <div class="d-flex align-center">
@@ -391,15 +385,15 @@
                         </v-card>
                       </v-col>
                     </v-row>
-                  </v-tab-item>
-                </v-col>
+                  </div>
+                </v-tab-item>
 
-                <v-col>
-                  <v-tab-item
-                    transition="fade-transition"
-                    reverse-transition="fade-transition"
-                    value="navTab-4"
-                  >
+                <v-tab-item
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-4"
+                >
+                  <div class="content_margin">
                     <v-tabs
                       v-model="skillTab"
                       class="secondary-tab"
@@ -413,92 +407,170 @@
                         v-for="(item,idx) in skillsTab"
                         :href="`#skillTab-${idx}`"
                         :key="idx"
+                        @click="setTabSkill(idx)"
                         :ripple="false"
                       >{{ item }}</v-tab>
                     </v-tabs>
-                  </v-tab-item>
 
-                  <div class="hold-skill-progress">
-                    <v-tabs-items v-model="skillTab" class="bg-transparent">
-                      <v-tab-item
-                        transition="fade-transition"
-                        reverse-transition="fade-transition"
-                        value="skillTab-0"
-                      >
-                        <v-row class="skill-wrap">
-                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                            <div class="logo-skill icon_ps">Ps</div>
-                            <div class="info-skill">
-                              <div class="head-skill">
-                                <span class="nameSkill">Photoshop</span>
-                                <span class="percentSkill">95%</span>
+                    <div class="hold-skill-progress">
+                      <v-tabs-items v-model="skillTab" class="bg-transparent">
+                        <v-tab-item
+                          transition="fade-transition"
+                          reverse-transition="fade-transition"
+                          value="skillTab-0"
+                        >
+                          <v-row class="skill-wrap">
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">95%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="95"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
                               </div>
-                              <v-progress-linear
-                                class="progress-bg"
-                                buffer-value="100"
-                                height="15px"
-                                value="95"
-                                background-color="rgba(228, 228, 228, 0.7)"
-                                :rounded="true"
-                              ></v-progress-linear>
-                            </div>
-                          </v-col>
-                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                            <div class="logo-skill icon_ps">Ps</div>
-                            <div class="info-skill">
-                              <div class="head-skill">
-                                <span class="nameSkill">Photoshop</span>
-                                <span class="percentSkill">95%</span>
+                            </v-col>
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">95%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="95"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
                               </div>
-                              <v-progress-linear
-                                class="progress-bg"
-                                buffer-value="100"
-                                height="15px"
-                                value="95"
-                                background-color="rgba(228, 228, 228, 0.7)"
-                                :rounded="true"
-                              ></v-progress-linear>
-                            </div>
-                          </v-col>
-                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                            <div class="logo-skill icon_ps">Ps</div>
-                            <div class="info-skill">
-                              <div class="head-skill">
-                                <span class="nameSkill">Photoshop</span>
-                                <span class="percentSkill">75%</span>
+                            </v-col>
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">75%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="75"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
                               </div>
-                              <v-progress-linear
-                                class="progress-bg"
-                                buffer-value="100"
-                                height="15px"
-                                value="75"
-                                background-color="rgba(228, 228, 228, 0.7)"
-                                :rounded="true"
-                              ></v-progress-linear>
-                            </div>
-                          </v-col>
-                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                            <div class="logo-skill icon_ps">Ps</div>
-                            <div class="info-skill">
-                              <div class="head-skill">
-                                <span class="nameSkill">Photoshop</span>
-                                <span class="percentSkill">25%</span>
+                            </v-col>
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">25%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="25"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
                               </div>
-                              <v-progress-linear
-                                class="progress-bg"
-                                buffer-value="100"
-                                height="15px"
-                                value="25"
-                                background-color="rgba(228, 228, 228, 0.7)"
-                                :rounded="true"
-                              ></v-progress-linear>
-                            </div>
-                          </v-col>
-                        </v-row>
-                      </v-tab-item>
-                    </v-tabs-items>
+                            </v-col>
+                          </v-row>
+                        </v-tab-item>
+
+                        <v-tab-item
+                          transition="fade-transition"
+                          reverse-transition="fade-transition"
+                          value="skillTab-1"
+                        >
+                          <v-row class="skill-wrap">
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">100%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="95"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
+                              </div>
+                            </v-col>
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">95%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="95"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
+                              </div>
+                            </v-col>
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">75%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="75"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
+                              </div>
+                            </v-col>
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">25%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="25"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
+                              </div>
+                            </v-col>
+                          </v-row>
+                        </v-tab-item>
+                      </v-tabs-items>
+                    </div>
                   </div>
-                </v-col>
+                </v-tab-item>
               </v-tabs-items>
             </div>
           </v-row>
@@ -788,6 +860,7 @@ img {
 .case-image {
   img {
     box-shadow: 0px 15px 30px rgba(56, 82, 206, 0.11);
+    border-radius: 20px;
   }
 }
 
@@ -831,9 +904,10 @@ img {
 }
 
 .hold-tabs {
-  width: 100%;
+  width: 96%;
   margin: 3rem 0;
   margin-bottom: 0;
+  margin-left: 2%;
   .main-tab {
     width: 100%;
   }
@@ -1075,10 +1149,24 @@ img {
       #ffcad0 51.95%,
       #fdbeba 89.88%
     );
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin: 0 auto;
+    position: absolute;
+    top: 53px;
+    left: 49px;
+
+    @media screen and (max-width: 600px) {
+      top: 13px;
+      left: 14px;
+    }
 
     img {
       width: 20px;
@@ -1157,10 +1245,24 @@ img {
       #ffcad0 51.95%,
       #fdbeba 89.88%
     );
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin: 0 auto;
+    position: absolute;
+    top: 33px;
+    left: 49px;
+
+    @media screen and (max-width: 600px) {
+      top: 13px;
+      left: 14px;
+    }
 
     img {
       width: 20px;
@@ -1170,6 +1272,12 @@ img {
   p {
     margin: 0;
   }
+}
+
+.content_margin {
+  margin-top: 4rem;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 </style>
 
@@ -1182,7 +1290,9 @@ export default {
     return {
       activeTab: null,
       skillTab: null,
+      typeSkill: '',
       colorTab: false,
+      currentTab:null,
       resume_tabs: [
         {
           name: 'about',
@@ -1219,6 +1329,13 @@ export default {
     };
   },
   methods: {
+    setTab(tabName) {
+      this.currentTab = tabName;
+      console.log(this.currentTab);
+    },
+    setTabSkill(i) {
+      this.typeSkill = i;
+    },
     getImgUrl(pic) {
       return require('@/assets/' + pic);
     }
