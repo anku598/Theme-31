@@ -32,7 +32,7 @@
                     </v-col>
 
                     <v-col lg="4">
-                      <div class="social-wrap">
+                      <div class="social-wrap card-social-hold">
                         <a href="#">
                           <v-icon>mdi-map-marker</v-icon>
                         </a>
@@ -81,7 +81,7 @@
               md="4"
               class="d-flex justify-lg-end justify-md-end justify-sm-center justify-center"
             >
-              <div class="social-wrap mt-10 content-hide">
+              <div class="social-wrap custom-margin content-hide">
                 <a href="#">
                   <img src="@/assets/behance.svg" alt />
                 </a>
@@ -711,11 +711,18 @@ img {
   align-items: center;
 }
 
+.card-social-hold {
+  justify-content: flex-end;
+}
+
 .resume,
 .social-wrap {
   display: flex;
   position: relative;
   z-index: 5;
+  &.custom-margin {
+    margin-top: 42px;
+  }
   a {
     width: 40px !important;
     height: 40px !important;
@@ -727,7 +734,7 @@ img {
     display: none;
     margin: 5px;
     img {
-      width: 50%;
+      width: 17px;
     }
     &.email {
       background: #fff !important;
