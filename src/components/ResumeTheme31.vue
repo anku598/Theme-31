@@ -1331,7 +1331,6 @@ export default {
   methods: {
     setTab(tabName) {
       this.currentTab = tabName;
-      console.log(this.currentTab);
     },
     setTabSkill(i) {
       this.typeSkill = i;
