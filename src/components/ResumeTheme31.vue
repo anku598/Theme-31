@@ -81,7 +81,7 @@
               md="4"
               class="d-flex justify-lg-end justify-md-end justify-sm-center justify-center"
             >
-              <div class="social-wrap custom-margin content-hide">
+              <div class="social-wrap custom-margin content-hide pr-7">
                 <a href="#">
                   <img src="@/assets/behance.svg" alt />
                 </a>
@@ -420,7 +420,7 @@
                           value="skillTab-0"
                         >
                           <v-row class="skill-wrap">
-                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <v-col md="6" lg="6" class="box-skill px-12" cols="12" sm="12">
                               <div class="logo-skill icon_ps">Ps</div>
                               <div class="info-skill">
                                 <div class="head-skill">
@@ -437,7 +437,7 @@
                                 ></v-progress-linear>
                               </div>
                             </v-col>
-                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <v-col md="6" lg="6" class="box-skill px-12" cols="12" sm="12">
                               <div class="logo-skill icon_ps">Ps</div>
                               <div class="info-skill">
                                 <div class="head-skill">
@@ -454,7 +454,7 @@
                                 ></v-progress-linear>
                               </div>
                             </v-col>
-                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <v-col md="6" lg="6" class="box-skill px-12" cols="12" sm="12">
                               <div class="logo-skill icon_ps">Ps</div>
                               <div class="info-skill">
                                 <div class="head-skill">
@@ -471,7 +471,7 @@
                                 ></v-progress-linear>
                               </div>
                             </v-col>
-                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <v-col md="6" lg="6" class="box-skill px-12" cols="12" sm="12">
                               <div class="logo-skill icon_ps">Ps</div>
                               <div class="info-skill">
                                 <div class="head-skill">
@@ -497,7 +497,7 @@
                           value="skillTab-1"
                         >
                           <v-row class="skill-wrap">
-                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <v-col md="6" lg="6" class="box-skill px-12" cols="12" sm="12">
                               <div class="logo-skill icon_ps">Ps</div>
                               <div class="info-skill">
                                 <div class="head-skill">
@@ -514,7 +514,7 @@
                                 ></v-progress-linear>
                               </div>
                             </v-col>
-                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <v-col md="6" lg="6" class="box-skill px-12" cols="12" sm="12">
                               <div class="logo-skill icon_ps">Ps</div>
                               <div class="info-skill">
                                 <div class="head-skill">
@@ -531,7 +531,7 @@
                                 ></v-progress-linear>
                               </div>
                             </v-col>
-                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <v-col md="6" lg="6" class="box-skill px-12" cols="12" sm="12">
                               <div class="logo-skill icon_ps">Ps</div>
                               <div class="info-skill">
                                 <div class="head-skill">
@@ -548,7 +548,7 @@
                                 ></v-progress-linear>
                               </div>
                             </v-col>
-                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                            <v-col md="6" lg="6" class="box-skill px-12" cols="12" sm="12">
                               <div class="logo-skill icon_ps">Ps</div>
                               <div class="info-skill">
                                 <div class="head-skill">
@@ -808,7 +808,7 @@ img {
     display: none;
     margin: 5px;
     img {
-      width: 17px;
+      width: 16px;
     }
     &.email {
       background: #fff !important;
@@ -861,6 +861,8 @@ img {
   img {
     box-shadow: 0px 15px 30px rgba(56, 82, 206, 0.11);
     border-radius: 20px;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -988,8 +990,8 @@ img {
     .logo-skill {
       width: 50px;
       height: 50px;
-      /* left: 201px; */
-      /* top: 845px; */
+      top: 4px;
+      left: 2px;
       background: #222d68;
       border: 5px solid #fdbfbc;
       box-sizing: border-box;
