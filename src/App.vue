@@ -71,4 +71,17 @@ a {
     );
   }
 }
+
+.hold_theme17 {
+  .progress-bg {
+    .v-progress-linear__determinate {
+      background: #2176e5 !important;
+    }
+  }
+
+  .v-progress-linear__background {
+    background-color: #fff !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+}
 </style>

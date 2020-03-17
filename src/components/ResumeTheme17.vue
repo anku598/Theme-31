@@ -8,7 +8,11 @@
             <v-row class="profileCard">
               <v-col lg="auto">
                 <div class="profile-info">
-                  <div class="profile-img"></div>
+                  <div class="profile-img">
+                    <a href="#">
+                      <img src="@/assets/img/resume17/chat-icon.svg" alt="Chat Icon" />
+                    </a>
+                  </div>
                   <div class="freelancer-name">
                     <h2>paul Porter</h2>
                     <p>Web Designer</p>
@@ -61,6 +65,109 @@
             </v-row>
           </v-container>
         </div>
+
+        <v-container>
+          <v-row>
+            <v-col lg="12">
+              <div class="hold_tabs">
+                <v-tabs
+                  v-model="activeTab"
+                  background-color="transparent"
+                  class="main-tab"
+                  active-class="isActive"
+                  :centered="true"
+                  :ripple="false"
+                >
+                  <v-tab
+                    :ripple="false"
+                    class="tab-item"
+                    v-for="(item,idx) in resume_tabs"
+                    :key="idx"
+                    :href="`#tab-${idx}`"
+                    @click="setTab(item)"
+                  >{{ item }}</v-tab>
+                </v-tabs>
+              </div>
+            </v-col>
+
+            <div class="hold_contents">
+              <v-tabs-items
+                class="bg-transparent"
+                v-model="activeTab"
+                active-class="content-margin"
+              >
+                <v-tab-item
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-0"
+                >item one</v-tab-item>
+                <v-tab-item
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-1"
+                >
+                  <div class="hold_skill_tab">
+                    <v-tabs
+                      v-model="skillTab"
+                      class="secondary-tab"
+                      background-color="transparent"
+                      centered
+                      hide-slider
+                      active-class="isActiveSkill"
+                    >
+                      <v-tab
+                        class="skill-tab-bg"
+                        v-for="(item,idx) in skillsTab"
+                        :href="`#skillTab-${idx}`"
+                        :key="idx"
+                        @click="setTabSkill(idx)"
+                        :ripple="false"
+                      >{{ item }}</v-tab>
+                    </v-tabs>
+                  </div>
+
+                  <v-tabs-items v-model="skillTab" class="bg-transparent">
+                    <v-tab-item value="skillTab-0">
+                      <div class="skill-wrap">
+                        <v-col md="12" lg="12" class="box-skill px-12" cols="12" sm="12">
+                          <div class="logo-skill icon_ps">Ps</div>
+                          <div class="info-skill">
+                            <v-progress-linear
+                              class="progress-bg"
+                              buffer-value="100"
+                              height="15px"
+                              value="95"
+                              background-color="#fff"
+                              :rounded="true"
+                            ></v-progress-linear>
+                          </div>
+                        </v-col>
+                      </div>
+                    </v-tab-item>
+                    <v-tab-item value="skillTab-1">nested tab two</v-tab-item>
+                    <v-tab-item value="skillTab-2">nested tab three</v-tab-item>
+                    <v-tab-item value="skillTab-4">nested tab four</v-tab-item>
+                  </v-tabs-items>
+                </v-tab-item>
+                <v-tab-item
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-2"
+                >item Three</v-tab-item>
+                <v-tab-item
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-3"
+                >item Four</v-tab-item>
+                <v-tab-item
+                  transition="fade-transition"
+                  reverse-transition="fade-transition"
+                  value="tab-4"
+                >item Five</v-tab-item>
+              </v-tabs-items>
+            </div>
+          </v-row>
+        </v-container>
       </div>
     </v-container>
   </div>
@@ -69,7 +176,31 @@
 <script>
 export default {
   name: 'Theme17',
-  components: {}
+  components: {},
+  data() {
+    return {
+      activeTab: null,
+      skillTab: null,
+      typeSkill: '',
+      currentTab: null,
+      resume_tabs: ['portfolio', 'skills', 'work', 'education', 'interviews'],
+      skillsTab: [
+        'Programming languages',
+        'Frameworks/ Databases',
+        'Design Skills',
+        'Software'
+      ]
+    };
+  },
+
+  methods: {
+    setTab(tabName) {
+      this.currentTab = tabName;
+    },
+    setTabSkill(i) {
+      this.typeSkill = i;
+    }
+  }
 };
 </script>
 
@@ -87,7 +218,7 @@ export default {
 }
 //  Base Css Here Start
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap|Material+Icons');
+// @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap|Material+Icons');
 
 *,
 *::before,
@@ -251,6 +382,7 @@ img {
 .freelancerProfileCard {
   width: 100%;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .header-section {
@@ -279,9 +411,26 @@ img {
   background: url('../assets/img/resume17/profile-pic.png') no-repeat;
   background-size: contain;
   margin-right: 15px;
+  position: relative;
+  a {
+    position: absolute;
+    right: 0;
+    top: 73px;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.05);
+    img {
+      height: 14px;
+    }
+  }
 }
 
 .freelancer-name {
+  margin-left: 20px;
   h2 {
     font-size: 20px;
     font-weight: 700;
@@ -393,6 +542,82 @@ img {
     align-items: center;
     justify-content: center;
     padding: 0 2rem;
+  }
+}
+
+// main tabs Style Here
+.hold_tabs,
+.hold_contents {
+  margin-top: 73px;
+}
+
+.tab-item {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 0px;
+  letter-spacing: 0.25em;
+  text-transform: capitalize;
+  color: rgba(16, 36, 195, 0.3) !important;
+  transition: all 0.3s ease-out;
+  &.isActive {
+    font-size: 24px;
+    line-height: 0px;
+    letter-spacing: 0.25em;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #2176e5 !important;
+  }
+}
+.v-slide-group__prev {
+  display: none !important;
+}
+
+// main Content Style Here
+.hold_contents {
+  width: 100%;
+
+  .theme--light.v-tabs-items {
+    min-height: 50vh;
+  }
+}
+
+.skill-wrap {
+  width: 65%;
+  margin: 0 auto;
+  .box-skill {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo-skill {
+    width: 50px;
+    height: 50px;
+
+    background: #222d68;
+    border: 5px solid #fdbfbc;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    font-family: Rubik;
+    font-style: normal;
+  }
+
+  .info-skill {
+    width: 90%;
   }
 }
 </style>
