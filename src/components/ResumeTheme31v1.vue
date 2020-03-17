@@ -1285,7 +1285,7 @@ img {
 
 <script lang='js' >
 export default {
-  name: 'Theme31',
+  name: 'Theme31v1',
   props: ['freelancer'],
   components: {},
   data() {
