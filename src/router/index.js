@@ -3,14 +3,15 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import Theme31v1 from '@/components/ResumeTheme31v1';
+import Theme31 from '@/components/ResumeTheme31';
 import Theme31v2 from '@/components/ResumeTheme31v2';
+import Theme31v3 from '@/components/ResumeTheme31v3';
 import Theme17 from '@/components/ResumeTheme17';
 
 const routes = [{
     path: '/',
-    name: 'Theme31v1',
-    component: Theme31v1,
+    name: 'Theme31',
+    component: Theme31,
     props: true
   },
 
@@ -18,6 +19,12 @@ const routes = [{
     path: '/v2',
     name: 'Theme31v2',
     component: Theme31v2,
+    props: true
+  },
+  {
+    path: '/v3',
+    name: 'Theme31v3',
+    component: Theme31v3,
     props: true
   },
 
