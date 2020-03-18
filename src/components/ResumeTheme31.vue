@@ -750,6 +750,7 @@ img {
     width: 55%;
   }
 }
+
 .profile-bg-card {
   background: linear-gradient(
     99.62deg,
@@ -1281,13 +1282,32 @@ img {
   margin-left: 2%;
   margin-right: 2%;
 }
+
+.hire-sectionv3 {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-end;
+  .hourly-info {
+    display: flex;
+    justify-content: space-between;
+    min-width: 42%;
+    p {
+    }
+    h3 {
+    }
+  }
+}
 </style>
 
 <script lang='js' >
+
 export default {
-  name: 'Theme31v1',
+  name: 'Theme31',
   props: ['freelancer'],
-  components: {},
+  components: {
+  
+  },
   data() {
     return {
       activeTab: null,
