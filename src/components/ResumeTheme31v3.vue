@@ -118,7 +118,7 @@
               <div class="hourly-info">
                 <div>
                   <p>Hourly rate</p>
-                  <h3>$ 25 usd</h3>
+                  <h3>$ 25 USD</h3>
                 </div>
                 <div class="line"></div>
 
@@ -792,11 +792,12 @@ img {
 .hire-sectionv3 {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-end;
   position: relative;
   z-index: 2;
   padding-right: 28px;
+  height: 200px;
 
   @media screen and (max-width: 575.98px) {
     margin-top: 30px;
@@ -853,17 +854,18 @@ img {
   );
   box-shadow: 0px 4px 20px rgba(253, 191, 187, 0.44);
   border-radius: 60px 5px 5px 5px;
-  width: 150px;
-  height: 46px;
+  width: 170px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff !important;
   text-transform: capitalize;
   font-weight: 700;
+  margin-top: 20px;
 
   @media screen and (max-width: 575.98px) {
-    margin-top: 35px;
+    margin-top: 25px;
   }
 }
 
