@@ -84,4 +84,29 @@ a {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   }
 }
+
+.v-window__prev {
+  left: 45% !important;
+}
+
+.v-window__next {
+  right: 45% !important;
+}
+
+.v-btn--icon {
+  color: #050505 !important;
+}
+
+.v-window__prev,
+.v-window__next {
+  background: #ffffff !important;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 50%;
+  position: absolute;
+  margin: 0 16px;
+  z-index: 1;
+  top: inherit !important;
+  bottom: calc(10% - 20px) !important;
+  cursor: pointer;
+}
 </style>

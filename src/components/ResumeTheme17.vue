@@ -153,17 +153,220 @@
                   transition="fade-transition"
                   reverse-transition="fade-transition"
                   value="tab-2"
-                >item Three</v-tab-item>
+                >
+                  <v-container class="mx-auto">
+                    <v-carousel v-model="model" hide-delimiter-background hide-delimiters>
+                      <v-carousel-item>
+                        <v-row class="hold_details">
+                          <v-col lg="6">
+                            <div class="hold_details_info">
+                              <div class="left">
+                                <h3>Graphic & Web Designer</h3>
+                                <p class="duration_time">2018 - 2019</p>
+                              </div>
+                              <div class="right">
+                                <h3>Company "React"</h3>
+                                <p
+                                  class="com-details"
+                                >- Turning creative concepts into finished websites.</p>
+                                <p
+                                  class="com-details"
+                                >- Drawing up detailed website s pecifications.</p>
+                                <p
+                                  class="com-details"
+                                >- Building websites that are easy to understand, navigate and use.</p>
+                                <p class="com-details">- Designing sample page layouts.</p>
+                                <p
+                                  class="com-details"
+                                >- Ensuring that the website complies with the company’s brand guidelines.</p>
+                              </div>
+                            </div>
+                          </v-col>
+                          <v-col lg="6">
+                            <div class="hold_details_info">
+                              <div class="left">
+                                <h3>Graphic & Web Designer</h3>
+                                <p class="duration_time">2018 - 2019</p>
+                              </div>
+                              <div class="right">
+                                <h3>Company "React"</h3>
+                                <p>- Turning creative concepts into finished websites.</p>
+                                <p>- Drawing up detailed website s pecifications.</p>
+                                <p>- Building websites that are easy to understand, navigate and use.</p>
+                                <p>- Designing sample page layouts.</p>
+                                <p>- Ensuring that the website complies with the company’s brand guidelines..</p>
+                              </div>
+                            </div>
+                          </v-col>
+                        </v-row>
+                      </v-carousel-item>
+
+                      <v-carousel-item>
+                        <v-row class="hold_details">
+                          <v-col lg="6">
+                            <div class="hold_details_info">
+                              <div class="left">
+                                <h3>Graphic & Web Designer</h3>
+                                <p class="duration_time">2018 - 2019</p>
+                              </div>
+                              <div class="right">
+                                <h3>Company "React"</h3>
+                                <p
+                                  class="com-details"
+                                >- Turning creative concepts into finished websites.</p>
+                                <p
+                                  class="com-details"
+                                >- Drawing up detailed website s pecifications.</p>
+                                <p
+                                  class="com-details"
+                                >- Building websites that are easy to understand, navigate and use.</p>
+                                <p class="com-details">- Designing sample page layouts.</p>
+                                <p
+                                  class="com-details"
+                                >- Ensuring that the website complies with the company’s brand guidelines.</p>
+                              </div>
+                            </div>
+                          </v-col>
+                          <v-col lg="6">
+                            <div class="hold_details_info">
+                              <div class="left">
+                                <h3>Graphic & Web Designer</h3>
+                                <p class="duration_time">2018 - 2019</p>
+                              </div>
+                              <div class="right">
+                                <h3>Company "React"</h3>
+                                <p>- Turning creative concepts into finished websites.</p>
+                                <p>- Drawing up detailed website s pecifications.</p>
+                                <p>- Building websites that are easy to understand, navigate and use.</p>
+                                <p>- Designing sample page layouts.</p>
+                                <p>- Ensuring that the website complies with the company’s brand guidelines..</p>
+                              </div>
+                            </div>
+                          </v-col>
+                        </v-row>
+                      </v-carousel-item>
+                    </v-carousel>
+                  </v-container>
+                </v-tab-item>
                 <v-tab-item
                   transition="fade-transition"
                   reverse-transition="fade-transition"
                   value="tab-3"
-                >item Four</v-tab-item>
+                >
+                  <v-container class="mx-auto">
+                    <v-carousel v-model="model" hide-delimiter-background hide-delimiters>
+                      <v-carousel-item>
+                        <v-row class="hold_details">
+                          <v-col lg="6">
+                            <div class="hold_details_info">
+                              <div class="left">
+                                <h3>Master in Web Developer</h3>
+                                <p class="duration_time">2015 - 2016</p>
+                              </div>
+                              <div class="right">
+                                <h3>Envision Media, Inc., Santa Cruz, CA</h3>
+                                <p
+                                  class="com-details"
+                                >- Turning creative concepts into finished websites.</p>
+                                <p
+                                  class="com-details"
+                                >- Drawing up detailed website s pecifications.</p>
+                                <p
+                                  class="com-details"
+                                >- Building websites that are easy to understand, navigate and use.</p>
+                                <p class="com-details">- Designing sample page layouts.</p>
+                                <p
+                                  class="com-details"
+                                >- Ensuring that the website complies with the company’s brand guidelines.</p>
+                              </div>
+                            </div>
+                          </v-col>
+                          <v-col lg="6">
+                            <div class="hold_details_info">
+                              <div class="left">
+                                <h3>Master in Web Developer</h3>
+                                <p class="duration_time">2015 - 2016</p>
+                              </div>
+                              <div class="right">
+                                <h3>Envision Media, Inc., Santa Cruz, CA</h3>
+                                <p>- Turning creative concepts into finished websites.</p>
+                                <p>- Drawing up detailed website s pecifications.</p>
+                                <p>- Building websites that are easy to understand, navigate and use.</p>
+                                <p>- Designing sample page layouts.</p>
+                                <p>- Ensuring that the website complies with the company’s brand guidelines..</p>
+                              </div>
+                            </div>
+                          </v-col>
+                        </v-row>
+                      </v-carousel-item>
+
+                      <v-carousel-item>
+                        <v-row class="hold_details">
+                          <v-col lg="6">
+                            <div class="hold_details_info">
+                              <div class="left">
+                                <h3>Master in Web Developer</h3>
+                                <p class="duration_time">2015 - 2016</p>
+                              </div>
+                              <div class="right">
+                                <h3>Envision Media, Inc., Santa Cruz, CA</h3>
+                                <p
+                                  class="com-details"
+                                >- Turning creative concepts into finished websites.</p>
+                                <p
+                                  class="com-details"
+                                >- Drawing up detailed website s pecifications.</p>
+                                <p
+                                  class="com-details"
+                                >- Building websites that are easy to understand, navigate and use.</p>
+                                <p class="com-details">- Designing sample page layouts.</p>
+                                <p
+                                  class="com-details"
+                                >- Ensuring that the website complies with the company’s brand guidelines.</p>
+                              </div>
+                            </div>
+                          </v-col>
+                          <v-col lg="6">
+                            <div class="hold_details_info">
+                              <div class="left">
+                                <h3>Master in Web Developer</h3>
+                                <p class="duration_time">2015 - 2016</p>
+                              </div>
+                              <div class="right">
+                                <h3>Envision Media, Inc., Santa Cruz, CA</h3>
+                                <p>- Turning creative concepts into finished websites.</p>
+                                <p>- Drawing up detailed website s pecifications.</p>
+                                <p>- Building websites that are easy to understand, navigate and use.</p>
+                                <p>- Designing sample page layouts.</p>
+                                <p>- Ensuring that the website complies with the company’s brand guidelines..</p>
+                              </div>
+                            </div>
+                          </v-col>
+                        </v-row>
+                      </v-carousel-item>
+                    </v-carousel>
+                  </v-container>
+                </v-tab-item>
                 <v-tab-item
                   transition="fade-transition"
                   reverse-transition="fade-transition"
                   value="tab-4"
-                >item Five</v-tab-item>
+                >
+                  <v-container>
+                    <div class="hold_video">
+                      <v-row>
+                        <v-col lg="6">
+                          <div class="video">
+                            <vue-core-video-player src="./videos/your_video.mp4"></vue-core-video-player>
+                          </div>
+                        </v-col>
+                        <v-col lg="6">
+                          <div class="play-btn">button</div>
+                        </v-col>
+                      </v-row>
+                    </div>
+                  </v-container>
+                </v-tab-item>
               </v-tabs-items>
             </div>
           </v-row>
@@ -174,14 +377,18 @@
 </template>
 
 <script>
+import VueCoreVideoPlayer from 'vue-core-video-player';
 export default {
   name: 'Theme17',
-  components: {},
+  components: {
+    VueCoreVideoPlayer
+  },
   data() {
     return {
       activeTab: null,
       skillTab: null,
       typeSkill: '',
+      model: 0,
       currentTab: null,
       resume_tabs: ['portfolio', 'skills', 'work', 'education', 'interviews'],
       skillsTab: [
@@ -206,6 +413,7 @@ export default {
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Lato:300,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Actor&display=swap');
 @font-face {
   font-family: 'Gotham Pro';
   src: url('../assets/fonts/Gotham Pro Regular.eot') format('embedded-opentype'),
@@ -618,6 +826,44 @@ img {
 
   .info-skill {
     width: 90%;
+  }
+}
+
+.hold_details_info {
+  display: flex;
+  .left {
+    flex-basis: 20%;
+  }
+  .right {
+    flex-basis: 80%;
+  }
+
+  h3 {
+    font-family: Gotham Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #5b5d60 !important;
+    margin-bottom: 20px;
+  }
+  .duration_time {
+    font-family: Actor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 19px;
+    color: #5b5d60 !important;
+    margin-top: 20px;
+  }
+
+  .com-details {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 25px;
+    color: rgba(91, 93, 96, 0.8) !important;
   }
 }
 </style>
