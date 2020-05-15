@@ -221,24 +221,23 @@
                               </div>
                             </v-col>
 
-                            <v-col
-                              md="3"
-                              sm="10"
-                              cols="10"
-                              class="company-info ml-auto hidden-sm-and-down"
-                            >
+                            <v-col md="3" sm="10" cols="10" class="company-info ml-auto">
                               <h2 class="company-title">Google</h2>
-                              <div>
+                              <div class="extra-small-screen">
                                 <p class="small-text">duration:</p>
                                 <p class="date">Dec 19 - Present</p>
                               </div>
+
+                              <p
+                                class="desc hidden-md-and-up"
+                              >I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes.</p>
                             </v-col>
 
                             <v-col
                               md="7"
                               sm="10"
                               cols="10"
-                              class="job-info ml-auto hidden-sm-and-down"
+                              class="job-info ml-auto hidden-sm-and-down visible-sm-only"
                             >
                               <p class="job-title">User interface designer</p>
                               <p
@@ -250,7 +249,7 @@
                               md="3"
                               sm="10"
                               cols="10"
-                              class="company-info ml-auto hidden-sm-and-up"
+                              class="company-info ml-auto hidden-sm-and-up hidden-xs-only"
                             >
                               <h2 class="company-title">Google</h2>
                               <p class="job-title">User interface designer</p>
@@ -265,6 +264,7 @@
                           </v-row>
                         </v-card>
                       </v-col>
+
                       <v-col sm="12" md="6" lg="6" xl="6" cols="12" pb="3">
                         <v-card class="bg-card">
                           <v-row>
@@ -274,24 +274,23 @@
                               </div>
                             </v-col>
 
-                            <v-col
-                              md="3"
-                              sm="10"
-                              cols="10"
-                              class="company-info ml-auto hidden-sm-and-down"
-                            >
+                            <v-col md="3" sm="10" cols="10" class="company-info ml-auto">
                               <h2 class="company-title">Google</h2>
-                              <div>
+                              <div class="extra-small-screen">
                                 <p class="small-text">duration:</p>
                                 <p class="date">Dec 19 - Present</p>
                               </div>
+
+                              <p
+                                class="desc hidden-md-and-up"
+                              >I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes.</p>
                             </v-col>
 
                             <v-col
                               md="7"
                               sm="10"
                               cols="10"
-                              class="job-info ml-auto hidden-sm-and-down"
+                              class="job-info ml-auto hidden-sm-and-down visible-sm-only"
                             >
                               <p class="job-title">User interface designer</p>
                               <p
@@ -303,7 +302,7 @@
                               md="3"
                               sm="10"
                               cols="10"
-                              class="company-info ml-auto hidden-sm-and-up"
+                              class="company-info ml-auto hidden-sm-and-up hidden-xs-only"
                             >
                               <h2 class="company-title">Google</h2>
                               <p class="job-title">User interface designer</p>
@@ -338,14 +337,11 @@
                               </div>
                             </v-col>
 
-                            <v-col
-                              md="10"
-                              sm="10"
-                              cols="10"
-                              class="company-info hidden-sm-and-down"
-                            >
+                            <v-col md="10" sm="10" cols="10" class="company-info">
                               <h2 class="company-title">California Institute of Technology</h2>
-                              <div class="d-flex align-center justify-space-between small-info">
+                              <div
+                                class="d-flex align-center justify-space-between small-info mobile-screen-for-edu"
+                              >
                                 <div class="d-flex align-center">
                                   <p class="small-text">M.Sc in HCI</p>
                                   <p class="date">Dec 19 - Present</p>
@@ -369,14 +365,11 @@
                               </div>
                             </v-col>
 
-                            <v-col
-                              md="10"
-                              sm="10"
-                              cols="10"
-                              class="company-info hidden-sm-and-down"
-                            >
+                            <v-col md="10" sm="10" cols="10" class="company-info">
                               <h2 class="company-title">California Institute of Technology</h2>
-                              <div class="d-flex align-center justify-space-between small-info">
+                              <div
+                                class="d-flex align-center justify-space-between small-info mobile-screen-for-edu"
+                              >
                                 <div class="d-flex align-center">
                                   <p class="small-text">M.Sc in HCI</p>
                                   <p class="date">Dec 19 - Present</p>
@@ -416,88 +409,88 @@
                         :ripple="false"
                       >{{ item }}</v-tab>
                     </v-tabs>
-                  </v-tab-item>
 
-                  <div class="hold-skill-progress">
-                    <v-tabs-items v-model="skillTab" class="bg-transparent">
-                      <v-tab-item
-                        transition="fade-transition"
-                        reverse-transition="fade-transition"
-                        value="skillTab-0"
-                      >
-                        <v-row class="skill-wrap">
-                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                            <div class="logo-skill icon_ps">Ps</div>
-                            <div class="info-skill">
-                              <div class="head-skill">
-                                <span class="nameSkill">Photoshop</span>
-                                <span class="percentSkill">95%</span>
+                    <div class="hold-skill-progress">
+                      <v-tabs-items v-model="skillTab" class="bg-transparent">
+                        <v-tab-item
+                          transition="fade-transition"
+                          reverse-transition="fade-transition"
+                          value="skillTab-0"
+                        >
+                          <v-row class="skill-wrap">
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">95%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="95"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
                               </div>
-                              <v-progress-linear
-                                class="progress-bg"
-                                buffer-value="100"
-                                height="15px"
-                                value="95"
-                                background-color="rgba(228, 228, 228, 0.7)"
-                                :rounded="true"
-                              ></v-progress-linear>
-                            </div>
-                          </v-col>
-                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                            <div class="logo-skill icon_ps">Ps</div>
-                            <div class="info-skill">
-                              <div class="head-skill">
-                                <span class="nameSkill">Photoshop</span>
-                                <span class="percentSkill">95%</span>
+                            </v-col>
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">95%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="95"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
                               </div>
-                              <v-progress-linear
-                                class="progress-bg"
-                                buffer-value="100"
-                                height="15px"
-                                value="95"
-                                background-color="rgba(228, 228, 228, 0.7)"
-                                :rounded="true"
-                              ></v-progress-linear>
-                            </div>
-                          </v-col>
-                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                            <div class="logo-skill icon_ps">Ps</div>
-                            <div class="info-skill">
-                              <div class="head-skill">
-                                <span class="nameSkill">Photoshop</span>
-                                <span class="percentSkill">75%</span>
+                            </v-col>
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">75%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="75"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
                               </div>
-                              <v-progress-linear
-                                class="progress-bg"
-                                buffer-value="100"
-                                height="15px"
-                                value="75"
-                                background-color="rgba(228, 228, 228, 0.7)"
-                                :rounded="true"
-                              ></v-progress-linear>
-                            </div>
-                          </v-col>
-                          <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
-                            <div class="logo-skill icon_ps">Ps</div>
-                            <div class="info-skill">
-                              <div class="head-skill">
-                                <span class="nameSkill">Photoshop</span>
-                                <span class="percentSkill">25%</span>
+                            </v-col>
+                            <v-col md="6" lg="6" class="box-skill" cols="12" sm="12">
+                              <div class="logo-skill icon_ps">Ps</div>
+                              <div class="info-skill">
+                                <div class="head-skill">
+                                  <span class="nameSkill">Photoshop</span>
+                                  <span class="percentSkill">25%</span>
+                                </div>
+                                <v-progress-linear
+                                  class="progress-bg"
+                                  buffer-value="100"
+                                  height="15px"
+                                  value="25"
+                                  background-color="rgba(228, 228, 228, 0.7)"
+                                  :rounded="true"
+                                ></v-progress-linear>
                               </div>
-                              <v-progress-linear
-                                class="progress-bg"
-                                buffer-value="100"
-                                height="15px"
-                                value="25"
-                                background-color="rgba(228, 228, 228, 0.7)"
-                                :rounded="true"
-                              ></v-progress-linear>
-                            </div>
-                          </v-col>
-                        </v-row>
-                      </v-tab-item>
-                    </v-tabs-items>
-                  </div>
+                            </v-col>
+                          </v-row>
+                        </v-tab-item>
+                      </v-tabs-items>
+                    </div>
+                  </v-tab-item>
                 </v-col>
               </v-tabs-items>
             </div>
@@ -701,6 +694,7 @@ img {
 }
 #ResumeTheme31 {
   background: #f2f5f9 !important;
+  height: 100%;
 }
 
 .v-tabs-bar.v-slide-group--is-overflowing.v-tabs-bar--is-mobile:not(.v-tabs-bar--show-arrows):not(.v-slide-group--has-affixes)
@@ -896,6 +890,10 @@ img {
   margin: 0 auto;
   padding: 8rem 0;
 
+  @media screen and (max-width: 600px) {
+    max-width: 100%;
+  }
+
   .box-skill {
     display: flex;
     width: 100%;
@@ -914,8 +912,8 @@ img {
     .logo-skill {
       width: 50px;
       height: 50px;
-      /* left: 201px; */
-      /* top: 845px; */
+      left: 5px;
+      top: 4px;
       background: #222d68;
       border: 5px solid #fdbfbc;
       box-sizing: border-box;
@@ -927,6 +925,9 @@ img {
       position: relative;
       font-family: Rubik;
       font-style: normal;
+
+      @media screen and (max-width: 600px) {
+      }
     }
     .info-skill {
       flex: 1;
@@ -1021,6 +1022,15 @@ img {
     }
   }
 
+  .extra-small-screen {
+    @media screen and (max-width: 600px) {
+      display: flex;
+      .small-text {
+        margin-right: 15px;
+      }
+    }
+  }
+
   .company-title {
     line-height: 42px;
     color: #222d68;
@@ -1029,7 +1039,7 @@ img {
   .job-title {
     line-height: 26px;
     color: #f97cb3;
-    margin-bottom: 0;
+    margin-bottom: 24px !important;
   }
 
   .company-info,
@@ -1111,6 +1121,14 @@ img {
     line-height: 26px;
     color: #f97cb3;
     margin-bottom: 0;
+  }
+
+  .mobile-screen-for-edu {
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: flex-start !important;
+      margin-bottom: 15px;
+    }
   }
 
   .company-info {
